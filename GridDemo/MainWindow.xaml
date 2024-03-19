@@ -19,7 +19,7 @@
         <TextBlock x:Name="lblGeslacht" FontSize="14" HorizontalAlignment="Left" Margin="116,185,0,0" TextWrapping="Wrap" Text="Geslacht" VerticalAlignment="Top" Height="19" Width="53"/>
         <TextBox x:Name="txtGeslacht" HorizontalAlignment="Left" Margin="65,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18" Grid.Column="1"/>
         <Button x:Name="btnToevoegen" Content="Toevoegen" FontSize="14" Background="DodgerBlue" Foreground="LightCyan" HorizontalAlignment="Left" Margin="80,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.523,-0.238" Width="105" Click="btnToevoegen_Click" Height="23" Grid.Column="1"/>
-        <DataGrid x:Name="dataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="1,283,46,10" Grid.Column="1"/>
+        <DataGrid x:Name="dataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="1,283,46,10" Grid.Column="1" SelectionChanged="dataGrid_SelectionChanged" IsReadOnly="True"/>
         <ComboBox x:Name="cmbLand" HorizontalAlignment="Left" Margin="65,46,0,0" VerticalAlignment="Top" Width="120" Height="22" Grid.Column="1" SelectionChanged="cmbLand_SelectionChanged"/>
         <TextBlock x:Name="lblLand" FontSize="14" HorizontalAlignment="Left" Margin="119,53,0,0" TextWrapping="Wrap" Text="Land" VerticalAlignment="Top" RenderTransformOrigin="0.631,-1.216" Height="19" Width="30"/>
 

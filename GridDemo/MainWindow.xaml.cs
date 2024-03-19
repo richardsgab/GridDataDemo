@@ -43,11 +43,13 @@ namespace GridDemo
         }
         private void BindLanden()
         {
+            landlist.Add(new Land("Select a country"));
             landlist.Add(new Land("Belgie"));
             landlist.Add(new Land("Duitsland"));
             landlist.Add(new Land("Frankrijk"));
             landlist.Add(new Land("Spanje"));
 
+            cmbLand.SelectedIndex = 0; //to show in combobox the 1st entry "select a country"
             cmbLand.ItemsSource = landlist;
         }
 
@@ -73,6 +75,24 @@ namespace GridDemo
         private void cmbLand_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Search(cmbLand.SelectedValue.ToString());
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var pselect = dataGrid.SelectedItem as Person;
+            string? pname = pselect.Naam;
+            int pleeft = pselect.Leeftijd;
+            string? pgesl = pselect.Geslacht;
+            string pland = pselect.Land.ToString(); //When selecting also land, the data grid shows only that country entry.
+            
+
+            txtNaam.Text = pname;
+            txtLeeftijd.Text = pleeft.ToString();
+            txtGeslacht.Text = pgesl.ToString();
+            cmbLand.Text = pland; //Sin comentar, cambia la busqueda 
+
+            //var row = ItemsControl.ContainerFromElement(sender as DataGrid, e.OriginalSource as DependencyObject
+            //if(row != null && row.Item is Person item){ 
         }
     }
 }
